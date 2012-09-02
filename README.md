@@ -6,7 +6,7 @@ This client is a JVM (scala) client that sniffs your teredo address and pushes i
 
 Where I live routable ip4 addresses are few and far between.  And there's no IPv6 infrastructure either...
 
-Freedns.afraid.org will sniff your address if you curl or wget them _but they don't have an ip6 address!_ 
+freedns.afraid.org will sniff your address if you curl or wget them _but they don't have an ip6 address!_ 
 
 I couldn't get inadyn-mt to compile properly. Then I started looking through inadyn-mt's source -- big and complicated... 
 
@@ -14,7 +14,7 @@ The source code for this client is about 10 lines.  Less than the readme.
 
 ##How to build
 
-Run `sbt compile assembly` from the root of the directory.  This will pacakage the scala library and the ddns client into FreeDns-assembly-1.0.jar.  If you don't want to build you can just copy the jar file.
+Run `sbt compile assembly` from the root of the directory.  This will package the scala library and the ddns client into FreeDns-assembly-1.0.jar.  If you don't want to build you can just copy the jar file.
 
 ##How to run
 
