@@ -1,0 +1,14 @@
+compile
+exit
+clean
+compile
+exit
+compile
+sbt test
+test
+run
+exit
+run
+exit
+assembly
+exit
