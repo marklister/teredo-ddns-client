@@ -28,9 +28,14 @@ run `java -jar FreeDns-assembly-1.0.jar --hashCode {your freeddns hashcode}`  Sc
 
 Optional arguments:
 
---url the url you want to 'hit' with `%1$s` substituting for the hashcode and `%2$s` substituting for the ip address.
+--url the url you want to 'hit' with `%1$s` substituting for the hashcode and `%2$s` substituting for the ip address.  (You can probably make this client work with any ddns service using this.)
+ 
+ * %1$s - hashcode
+ * %2$s - ip  address
 
 --address: the ipaddress you want to send to freedns (defaults to your teredo address).
+
+--verbose:  shows your sniffed ip address and the outgoing http get url.
 
 If that appears to work for you then put the command into your /etc/cron.hourly directory or into your crontab (or set it up as a job to run when the teredo interface appears) 
 

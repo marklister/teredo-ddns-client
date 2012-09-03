@@ -23,7 +23,7 @@ object FreeDns extends optional.Application{
     val teredoAddr=NetworkInterface.getNetworkInterfaces.filter(_.getName.startsWith("teredo"))
                   .flatMap(_.getInterfaceAddresses).map(_.getAddress)
                   .filter(_.toString.startsWith("/2001")).mkString.drop(1).dropRight(2)
-    if (verbose) println ("teredo:"+teredoAddr)
+    if (verbose) println ("Sniffed teredo addr:"+teredoAddr)
     
     val u= new URL(url getOrElse(defUrl) format (hashCode, address.getOrElse(teredoAddr)))
     if(verbose) println ("url:"+u)
