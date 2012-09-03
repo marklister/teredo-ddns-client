@@ -24,11 +24,13 @@ If you don't want to build you can download the FreeDns-assembly-1.0.jar from th
 
 ##How to run
 
-run `java -jar FreeDns-assembly-1.0.jar --hashCode {your freeddns hashcode}`  Scala is not required to run this client -- only to build it.
+run `java -jar FreeDns-assembly-1.0.jar --hashCode [your freeddns hashcode].`  That's it after you run the above you should have a dns aliased ip6 address!  
 
-Optional arguments:
+You can obtain your hashcode by inspecting the _direct url_ link given to you by freedns.afraid.org.  Scala is not required to run this client -- only to build it.
 
---url the url you want to 'hit' with `%1$s` substituting for the hashcode and `%2$s` substituting for the ip address.  (You can probably make this client work with any ddns service using this.)
+####Optional arguments:
+
+--url the url you want to 'hit' with `%1$s` substituting for the hashcode and `%2$s` substituting for the ip address.  (You can probably make this client work with any ddns service using this.)  The default url is `http://freedns.afraid.org/dynamic/update.php?%1$s&address=%2$s`
  
  * %1$s - hashcode
  * %2$s - ip  address
@@ -39,7 +41,7 @@ Optional arguments:
 
 If that appears to work for you then put the command into your /etc/cron.hourly directory or into your crontab (or set it up as a job to run when the teredo interface appears) 
 
-Note:  I'm using optional to parse the arguments.  Optional is out of date for current versions of scala and incorrectly reports the syntax as `FreeDns <hashCode>` when in fact it only accepts `FreeDns --hashCode hashcode`
+Note:  I'm using paulp/optional to parse the arguments.  Optional is out of date for current versions of scala and incorrectly reports the syntax as `FreeDns <hashCode>` when in fact it only accepts `FreeDns --hashCode hashcode`
 
 ##Licence
 
