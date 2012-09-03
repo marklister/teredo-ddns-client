@@ -28,7 +28,7 @@ run `java -jar FreeDns-assembly-1.0.jar --hashCode {your freeddns hashcode}`  Sc
 
 Optional arguments:
 
---url the url you want to 'hit' with `$1%s` substituting for the hashcode and `$2%s` substituting for the ip address.
+--url the url you want to 'hit' with `%1$s` substituting for the hashcode and `%2$s` substituting for the ip address.
 
 --address: the ipaddress you want to send to freedns (defaults to your teredo address).
 

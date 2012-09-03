@@ -15,17 +15,19 @@ import scala.io.Source
 import scala.collection.JavaConversions._
 
 object FreeDns extends optional.Application{
-  val defUrl="http://freedns.afraid.org/dynamic/update.php?$1%s &address=$2%s"
+  val defUrl="http://freedns.afraid.org/dynamic/update.php?%1$s&address=%2$s"
 
-  def main(hashCode:String,url:Option[String],address:Option[String]): Unit = {
+  def main(hashCode:String,url:Option[String],address:Option[String], verbose:Boolean=false): Unit = {
     
     //optionally sniff the teredo address
     val teredoAddr=NetworkInterface.getNetworkInterfaces.filter(_.getName.startsWith("teredo"))
                   .flatMap(_.getInterfaceAddresses).map(_.getAddress)
                   .filter(_.toString.startsWith("/2001")).mkString.drop(1).dropRight(2)
+    if (verbose) println ("teredo:"+teredoAddr)
     
     val u= new URL(url getOrElse(defUrl) format (hashCode, address.getOrElse(teredoAddr)))
- 
+    if(verbose) println ("url:"+u)
+    
     val con=u.openConnection
     con.connect
     val result = Source.fromInputStream(con.getInputStream).getLines.mkString
