@@ -41,6 +41,24 @@ You can obtain your hashcode by inspecting the _direct url_ link given to you by
 
 If that appears to work for you then put the command into your /etc/cron.hourly directory or into your crontab (or set it up as a job to run when the teredo interface appears) 
 
+sample /etc/cron.hourly/ddns file:
+
+```java -jar /usr/sbin/FreeDns-assembly-1.01.jar --hashCode saudhyuiew64784fYTU5uiyuo878ygIUT87tGygFYRTGh=```
+
+sample /etc/miredo/client-hook file
+
+<pre># various stuff at the beginning unchanged...
+
+# run our ddns job when the interface comes up....
+# hopefully we have an ipv6 address now...
+
+sh /etc/cron.hourly/ddns
+
+exit 0
+</pre>
+
+Edit: you can edit your /etc/miredo/client-hook and
+
 Note:  I'm using paulp/optional to parse the arguments.  Optional is out of date for current versions of scala and incorrectly reports the syntax as `FreeDns <hashCode>` when in fact it only accepts `FreeDns --hashCode hashcode`
 
 ##Licence
