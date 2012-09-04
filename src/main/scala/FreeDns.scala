@@ -20,9 +20,13 @@ object FreeDns extends optional.Application{
   def main(hashCode:String,url:Option[String],address:Option[String], verbose:Boolean=false): Unit = {
     
     //optionally sniff the teredo address
-    val teredoAddr=NetworkInterface.getNetworkInterfaces.filter(_.getName.startsWith("teredo"))
+    val raw=NetworkInterface.getNetworkInterfaces.filter(_.getName.startsWith("teredo"))
                   .flatMap(_.getInterfaceAddresses).map(_.getAddress)
-                  .filter(_.toString.startsWith("/2001")).mkString.drop(1).dropRight(2)
+                  .filter(_.toString.startsWith("/2001")).mkString
+                  
+    val e = raw.lastIndexOf("%")
+    val teredoAddr=raw.substring(1, e)
+    
     if (verbose) println ("Sniffed teredo addr:"+teredoAddr)
     
     val u= new URL(url getOrElse(defaultUrl) format (hashCode, address.getOrElse(teredoAddr)))
