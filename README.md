@@ -12,6 +12,15 @@ I couldn't get inadyn-mt to compile properly. Then I started looking through ina
 
 The source code for this client is about 10 lines.  Less than the readme.
 
+##Similar Alternatives
+
+You might try the service offered by [dyndnsix.org](https://dyndnsix.org).  It's an ip6 curl or wget driven ddns service which is pretty cool.  If I'd known about it I wouldn't have bothered to write this client (although it was also an exercise in scala). Cool features:
+
+* Free.
+* Registration free (or optional). No traditional username/password!
+* Optionally secure.
+* Excellent function to complexity ratio.
+
 ##How to build
 
 Run `sbt compile assembly` from the root of the directory.  This will package the scala library and the ddns client into FreeDns-assembly-1.0.jar.  If you don't want to build you can just copy the jar file.

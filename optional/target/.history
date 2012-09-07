@@ -12,3 +12,11 @@ run
 exit
 assembly
 exit
+version
+help
+exit
+run
+run 22
+run --file f 22
+run 
+exit
