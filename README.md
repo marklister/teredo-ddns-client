@@ -23,7 +23,7 @@ You might try the service offered by [dyndnsix.org](https://dyndnsix.org).  It's
 
 ##Binary
 
-Check the target directory or [this link](https://github.com/milo-minderbender/teredo-ddns-client/raw/master/target/FreeDns-assembly-1.01.jarhttps://github.com/milo-minderbender/teredo-ddns-client/raw/master/target/FreeDns-assembly-1.01.jar)
+Check the target directory or [this link](https://github.com/milo-minderbender/teredo-ddns-client/raw/master/target/FreeDns-assembly-1.01.jar)
 
 ##How to build
 
