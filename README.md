@@ -21,6 +21,10 @@ You might try the service offered by [dyndnsix.org](https://dyndnsix.org).  It's
 * Optionally secure.
 * Excellent function to complexity ratio.
 
+##Binary
+
+Check the target directory or [this link](https://github.com/milo-minderbender/teredo-ddns-client/raw/master/target/FreeDns-assembly-1.01.jarhttps://github.com/milo-minderbender/teredo-ddns-client/raw/master/target/FreeDns-assembly-1.01.jar)
+
 ##How to build
 
 Run `sbt compile assembly` from the root of the directory.  This will package the scala library and the ddns client into FreeDns-assembly-1.0.jar.  If you don't want to build you can just copy the jar file.
